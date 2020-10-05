@@ -7,9 +7,10 @@ import { UserContext } from '../../App';
 
 const JoinedEvent = () => {
     const [events, setEvents] = useState([]);
+    const [del, setDel] = useState(false);
     const [loggedInUser, setloggedInUser] = useContext(UserContext);
     useEffect(() => {
-        fetch('http://localhost:5000/userEvents?email=' + loggedInUser.email, {
+        fetch('https://pure-ridge-14119.herokuapp.com/userEvents?email=' + loggedInUser.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -21,15 +22,15 @@ const JoinedEvent = () => {
                 setEvents(data)
             })
 
-    }, [])
+    }, [del])
     const deleteEvent = (id) => {
 
-        fetch('http://localhost:5000/delete/' + id, {
+        fetch('https://pure-ridge-14119.herokuapp.com/delete/' + id, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
+                setDel(!del)
             })
 
 
@@ -38,10 +39,10 @@ const JoinedEvent = () => {
         <div>
             <Grid style={{padding: '20px', margin: 'auto'}} container spacing={8} >
                 {
-                    events.map(data => <Grid key={data.id} item xs={6} sm={3}>
+                    events.map(data => <Grid key={data._id} item xs={6} sm={3}>
                         <Card>
                             <CardActionArea>
-                                <img style={{ height: '80%', width: "100%", }} src={data.image} alt={data.title} />
+                                <img style={{ height: '80%', width: "100%", }} src={'https://i.ibb.co/M6d0gS5/extra-Volunteer.png'} alt={data.title} />
 
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">

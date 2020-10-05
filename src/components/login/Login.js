@@ -61,7 +61,7 @@ const Login = () => {
     firebase.auth().signOut().then(function() {})
       .catch(function(error) {});
 
-      
+
     const storeAuthToken = () => {
         firebase.auth().currentUser.getIdToken(true)
             .then(function (idToken) {
@@ -75,7 +75,7 @@ const Login = () => {
         <div style={style.container}>
             <h2>Login With</h2>
             <button onClick={handleGoogleSignIn} style={style.button} > <img style={{height: '20px', width: '20px'}} src={'https://i.ibb.co/Jjt6XRw/google.png'} alt="Google"/> Continue with Google</button><br /><br />
-            <span>Don't have an account?<Link>Create a new account</Link></span>
+            <span>Don't have an account?<Link to=''>Create a new account</Link></span>
 
         </div>
     );

@@ -14,7 +14,6 @@ import DATA from '../../fakeData/data';
 const NewVolunteer = () => {
 
     const { id } = useParams();
-    console.log(id)
 
     const singleEvents = DATA.find(data => data.id === parseInt(id));
 
@@ -75,14 +74,14 @@ const NewVolunteer = () => {
             organization: organization
         }
 
-        fetch('http://localhost:5000/addUser', {
+        fetch('https://pure-ridge-14119.herokuapp.com/addUser', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newUser)
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+
             });
         history.push('/events')
 
