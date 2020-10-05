@@ -1,0 +1,32 @@
+form {
+    padding: 30px;
+    border: 1px solid rgb(195, 195, 195);
+    width: 20%;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 90px;
+    color: Black
+}
+
+input {
+    color: black;
+    border: none;
+    border-bottom: 1px solid rgb(195, 195, 195);
+    width: 100%;
+    margin-top: 25px;
+    font-size: 15px;
+}
+input[value]{
+    font-size: 20px;
+}
+
+.Registerbtn{
+    border:none;
+    margin-top:20px;
+    background-color: #2196f3;
+    border-radius: 3px;
+    width: 90%;
+    color: #fff;
+    padding: 5px;
+    
+}
